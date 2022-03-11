@@ -10,4 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wasm-bindgen = "0.2"
+getrandom = { version = "0.2", features = ["js"] }
+libsignal-protocol = { path = "../rust/protocol" }
+rand = "0.7.3"
 

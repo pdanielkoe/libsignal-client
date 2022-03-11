@@ -15,6 +15,8 @@ use arrayref::array_ref;
 use rand::{CryptoRng, Rng};
 use subtle::ConstantTimeEq;
 
+use wasm_bindgen::prelude::*;
+
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub enum KeyType {
     Djb,
@@ -208,6 +210,7 @@ enum PrivateKeyData {
     DjbPrivateKey([u8; curve25519::PRIVATE_KEY_LENGTH]),
 }
 
+#[wasm_bindgen]
 #[derive(Clone, Copy, Eq, PartialEq)]
 pub struct PrivateKey {
     key: PrivateKeyData,
